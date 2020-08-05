@@ -5,6 +5,7 @@ import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import {Input} from '../../components/Input'
 import {TextArea} from '../../components/TextArea'
+import {Select} from '../../components/Select'
 
 const TeacherForm:React.FC = () => {
   const title = "Que incrivel que você quer dar aulas."
@@ -25,8 +26,44 @@ const TeacherForm:React.FC = () => {
         
         <fieldset>
           <legend>Sobre a aula</legend>
-          <Input name="subject" label="Matéria" />
+          <Select 
+            options={[
+              {value: 'Artes', label: 'Artes'},
+              {value: 'Matemática', label: 'Matemática'},
+              {value: 'História', label: 'História'},
+              {value: 'Ciências', label: 'Ciências'},
+              {value: 'Física', label: 'Física'},
+              {value: 'Geografia', label: 'Geografia'},
+              {value: 'Português', label: 'Português'},
+              {value: 'Química', label: 'Química'},
+            ]}
+            name="subject" 
+            label="Matéria" />
           <Input name="cost" label="Custo da sua hora por aula" />
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            Horários Disponiveis
+            <button type="button">+ Novo Horario</button>
+          </legend>
+
+          <div className="schedule-item">
+          <Select 
+            options={[
+              {value: '0', label: 'Domingo'},
+              {value: '1', label: 'Segunda-feira'},
+              {value: '2', label: 'Terça-feira'},
+              {value: '3', label: 'Quarta-feira'},
+              {value: '4', label: 'Quinta-feira'},
+              {value: '5', label: 'Sexta-feira'},
+              {value: '6', label: 'Sábado'},
+            ]}
+            name="week_day" 
+            label="Dia da semana" />
+            <Input name="from" label="Das" type="time" />
+            <Input name="to" label="Até" type="time" />
+          </div>
         </fieldset>
 
         <footer>
