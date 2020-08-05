@@ -4,6 +4,7 @@ import {PageHeader} from '../../components/PageHeader'
 import './styles.css'
 import warningIcon from '../../assets/images/icons/warning.svg'
 import {Input} from '../../components/Input'
+import {TextArea} from '../../components/TextArea'
 
 const TeacherForm:React.FC = () => {
   const title = "Que incrivel que você quer dar aulas."
@@ -19,6 +20,7 @@ const TeacherForm:React.FC = () => {
           <Input name="name" label="Nome Completo" />
           <Input name="avatar" label="Avatar" />
           <Input name="whatsapp" label="Whatsapp" />
+          <TextArea name="bio" label="Biografia" />
         </fieldset>
         
         <fieldset>
