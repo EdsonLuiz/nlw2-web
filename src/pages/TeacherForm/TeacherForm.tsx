@@ -2,6 +2,7 @@ import React from 'react'
 import {PageHeader} from '../../components/PageHeader'
 
 import './styles.css'
+import warningIcon from '../../assets/images/icons/warning.svg'
 import {Input} from '../../components/Input'
 
 const TeacherForm:React.FC = () => {
@@ -25,6 +26,15 @@ const TeacherForm:React.FC = () => {
           <Input name="subject" label="Matéria" />
           <Input name="cost" label="Custo da sua hora por aula" />
         </fieldset>
+
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Aviso importante"/>
+            Importante! <br />
+            Preencha todos os dados
+          </p>
+          <button type="button">Salvar cadastro</button>
+        </footer>
       </main>
     </div>
   )
